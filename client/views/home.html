@@ -1,45 +1,101 @@
 <template name="home">
-	<div class="jumbotron container-fluid">
-		<div class="container text-center">
-			<div class="row">
-				<h1>We Work Meteor</h1>
-			</div>
-			<div class="row">
+	<div class="header">
+		<div class="container header-container">
+            
+          <div class="header-width">
+				<h1 class="header-title">Jobb inom Customer Success.</h1>
+				<div class="header-subtitle">
+					På CustomerSuccess.se listar vi lediga jobb specifikt inom <a class="blue-link" href="http://www.customersuccess.se/">Customer Success</a> i Sverige. Just nu finns det <a class="blue-link" href="{{pathFor 'jobs'}}">{{getCount 'jobCount'}} aktiva jobb</a> inom Customer Success.<!-- <a href="{{pathFor 'profileNew'}}">create your profile</a> to join the <a href="{{pathFor 'profiles'}}">{{getCount 'developerCount'}} registered developers</a>.-->
+				</div>
 				<br>
-				<iframe
+<!--				<iframe
 				  src="//platform.twitter.com/widgets/follow_button.html?screen_name=weworkmeteor&size=l&show_count=false"
 				  style="width: 185px; height: 28px;"
 				  allowtransparency="true"
 				  frameborder="0"
 				  scrolling="no">
 				</iframe>
-				<br><br>
+				<br><br>-->
+          </div>
+            <div class="container">
+				<div class="common-ButtonGroup buttons flex-center">
+
+					<a class="common-Button common-Button--default" href="{{pathFor 'jobNew'}}" data-analytics-action="sign_up" data-analytics-source="footer_cta">
+					Lägg in annons gratis
+					</a>
+
+				<!--<a href="{{pathFor 'profileNew'}}" class="common-Button" data-analytics-action="contact_sales" data-analytics-source="footer_cta">
+					Skapa en profil
+				</a>-->
+
+				</div>
 			</div>
-			<div class="row">
-				<p>
-					The premier job board and developer community space specifically for <a href="http://www.meteor.com/">Meteor</a>.
-					<br><br>
-					Browse the <a href="{{pathFor 'jobs'}}">{{getCount 'jobCount'}} active job postings</a> or <a href="{{pathFor 'profileNew'}}">create your profile</a> to join the <a href="{{pathFor 'profiles'}}">{{getCount 'developerCount'}} registered developers</a>.
-				</p>
-			</div>
+			<!--<div class="row  middle-xs">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding-standard">
+					<div class="plan plan-standard">
+						<h2 class="plan-title common-uppercase">För arbetsgivare</h2>
+						<div class="Plan-splitPricingContainer row">
+							<div class="col-xs-12 col-md-12">
+							  <div class="text-center">
+								<div class="plan-card">
+								 <div class="plan-card-title">{{getCount 'developerCount'}}</div>
+								 <div class="plan-card-description">Customer Success Managers anslutna</div>
+								</div>
+							  </div>
+							</div>
+						</div>
+						<ul class="plan-list">
+						  <li class="plan-listItem">Nåt</li>
+						  <li class="plan-listItem">att skriva</li>
+						  <li class="plan-listItem"> här</li>	
+						</ul>
+						<a class="plan-button common-uppercase" role="button" href="{{pathFor 'jobNew'}}">Lägg in ett jobb</a>
+					</div>
+				</div>
+				<div class="col-xs-11 col-sm-6 col-md-6 col-lg-6 no-padding-csm">
+					<div class="plan plan-csm">
+						<h2 class="plan-title plan-csm-title common-uppercase">För Customer Success</h2>
+						<div class="plan-description">Customer Success Managers anslutna</div>
+						<ul class="plan-list">
+						<li class="plan-listItem">Nåt</li>
+						<li class="plan-listItem">att skriva</li>
+						<li class="plan-listItem">här också</li>
+					</ul>
+					<a class="plan-button plan-button-csm common-uppercase" role="button" href="{{pathFor 'profileNew'}}">Skapa en profil</a>
+					</div>
+				</div>
+			</div>-->
 			
-			<div id="callToAction" class="row">
-				<a class="col-sm-4 col-sm-offset-1 col-xs-12 text-center btn btn-primary btn-md" role="button" href="{{pathFor 'jobNew'}}">Post A Job</a>
-				<a class="col-sm-4 col-sm-offset-2 col-xs-12 text-center btn btn-success btn-md" role="button" href="{{pathFor 'profileNew'}}">Create a Profile</a>
-			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container top-jobs-wrapper">
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 no-padding-standard">
 				{{>jobsRecent}}
 			</div>
 		</div>
-		<hr>
-		<div class="row">
+	</div>
+    <div class="header-width marginTop100 text-center">
+                <img class="profile-image-front" src="../images/antos.jpg">
+				<h1 class="header-title">Anders Ekholm</h1>
+				<div class="header-subtitle">
+					Customer Success Manager, <a class="blue-link" href="http://www.bannerflow.com/">Bannerflow</a>
+				</div>
+				<br>
+                <div class="common-ButtonGroup buttons flex-center marginTop100">
+
+					<a class="common-Button common-Button--default" href="https://www.linkedin.com/in/aekholm/" target="_blank" data-analytics-action="sign_up" data-analytics-source="footer_cta">
+					Kontakta mig på LinkedIn
+					</a>
+
+				</div>
+				<br><br>
+          </div>
+    <!--<div class="container">
+      <div class="row">
 			<div class="col-sm-12">
 				{{>profilesRecent}}
 			</div>
 		</div>
-	</div>
+    </div>-->
 </template>

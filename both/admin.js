@@ -1,11 +1,12 @@
 AdminConfig = {
-  name: 'We Work Meteor',
+  name: 'CustomerSuccess.se',
   collections: {
     Jobs: {
       icon: 'briefcase',
       tableColumns: [
         { label: 'ID', name: '_id' },
         { label: 'Title', name: 'title' },
+        { label: 'Company', name: 'company' },
         { label: 'User Name', name: 'userName' },
         { label: 'Status', name: 'status' }
       ],

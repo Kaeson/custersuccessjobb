@@ -19,7 +19,7 @@ Profiles.attachSchema(
     },
     userName: {
       type: String,
-      label: "User Name",
+      label: "Användarnamn",
       autoValue: function() {
         if (this.isInsert) {
           return getUserName(Meteor.user());
@@ -38,7 +38,7 @@ Profiles.attachSchema(
     },
     name: {
       type: String,
-      label: "Name",
+      label: "Namn",
       max: 128
     },
     type: {
@@ -48,17 +48,17 @@ Profiles.attachSchema(
     },
     title: {
       type: String,
-      label: "Title",
+      label: "Titel",
       max: 128
     },
     location: {
       type: String,
-      label: "Location",
+      label: "Plats",
       max: 256
     },
     description: {
       type: String,
-      label: "Description",
+      label: "Beskrivning",
       max: 10000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
@@ -78,18 +78,18 @@ Profiles.attachSchema(
     },
     availableForHire: {
       type: Boolean,
-      label: "Currently Available For Hire",
+      label: "Öppen för nya utmaningar",
       defaultValue: false
     },
     interestedIn: {
       type: [String],
-      label: "Interested In",
+      label: "Intresserad av",
       allowedValues: JOB_TYPES,
       optional: true
     },
     contact: {
       type: String,
-      label: "Contact Info",
+      label: "Kontaktinformation",
       max: 1024,
       optional: true
     },

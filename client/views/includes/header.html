@@ -1,5 +1,5 @@
 <template name="header">
-    <section id="header">
+    <section id="header" class="globalNav">
         {{>connectionBanner}}
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
@@ -11,18 +11,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">We Work Meteor</a>
+                    <a class="navbar-brand" href="/">Customer Success</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}">Jobs</a></li>
-                        <li class="{{isActiveRoute regex='profiles'}}"><a href="{{pathFor 'profiles'}}">Developers</a></li>
+                        <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}">Lediga jobb</a></li>
+                        <!--<li class="{{isActiveRoute regex='profiles'}}"><a href="{{pathFor 'profiles'}}">Customer Success Managers</a></li>-->
                         {{#if currentUser}}
-                            <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}">Post a Job</a></li>
+                            <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}">Lägg in ett jobb</a></li>
                             {{#unless currentUser.isDeveloper}}
                                 <li class="{{isActiveRoute regex='^profile$'}}">
-                                    <a href="{{pathFor 'profileNew'}}">Create Developer Profile</a>
+                                    <a href="{{pathFor 'profileNew'}}">Skapa en CSM profil</a>
                                 </li>
                             {{/unless}}
                         {{/if}}
@@ -31,8 +31,8 @@
                         {{#if currentUser}}
                         	{{>headerUserMenu}}
                         {{else}}
-                            <li class="{{isActiveRoute regex='signIn'}}"><a href="{{pathFor 'signIn'}}">Log In</a></li>
-                            <li class="{{isActiveRoute regex='signUp'}}"><a href="{{pathFor 'signUp'}}">Sign Up</a></li>
+                            <li class="{{isActiveRoute regex='signIn'}}"><a href="{{pathFor 'signIn'}}">Logga in</a></li>
+                            <li class="{{isActiveRoute regex='signUp'}}"><a href="{{pathFor 'signUp'}}">Registrera</a></li>
                         {{/if}}
                     </ul>
                 </div>
@@ -49,7 +49,7 @@
 		</a>
         <ul class="dropdown-menu" role="menu">
             <li>
-                <a href="{{pathFor 'myJobs'}}"><i class="fa fa-building fa-fw"></i> My Posted Jobs</a>
+                <a href="{{pathFor 'myJobs'}}"><i class="fa fa-building fa-fw"></i> Mina jobb</a>
             </li>
             <li class="divider"></li>
             {{#if isInRole 'admin'}}
@@ -58,18 +58,18 @@
             {{/if}}
             {{#if currentUser.isDeveloper}}
                 <li>
-                    {{#with profile}}<a href="{{pathFor 'profile'}}"><i class="fa fa-rocket fa-fw"></i> Developer Profile</a>{{/with}}
+                    {{#with profile}}<a href="{{pathFor 'profile'}}"><i class="fa fa-rocket fa-fw"></i> Customer Success Profil</a>{{/with}}
                 </li>
             {{else}}
                 <li>
-                    <a href="{{pathFor 'profileNew'}}"><i class="fa fa-rocket fa-fw"></i> Create Developer Profile</a>
+                    <a href="{{pathFor 'profileNew'}}"><i class="fa fa-rocket fa-fw"></i> Skapa CSM profil</a>
                 </li>
             {{/if}}
             <li>
-                <a href="#" id="userProfile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                <a href="#" id="userProfile"><i class="fa fa-user fa-fw"></i> Användarprofil</a>
             </li>
             <li class="divider"></li>
-            <li><a href="#" id="signOut"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
+            <li><a href="#" id="signOut"><i class="fa fa-sign-out fa-fw"></i> Logga ut</a></li>
         </ul>
     </li>
 </template>

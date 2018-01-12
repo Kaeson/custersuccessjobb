@@ -13,12 +13,16 @@
 @gray:                   #777; // #555
 @gray-light:             lighten(@gray-base, 60%);   // #999
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@orange:                 #fdbc72;
+@green:                  #1bae3f;
 
-@brand-primary:         #de4f4f;
+@brand-primary:         #252525;
 @brand-success:         #22B24C;
 @brand-info:            #369;
 @brand-warning:         #F5E625;
 @brand-danger:          #F57A00;
+@brand-white:          #fff;
+@brand-pink:          #ffb9c6;
 
 
 //== Scaffolding
@@ -26,7 +30,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #fafafa;
 //** Global text color on `<body>`.
 @text-color:            @gray;
 
@@ -42,8 +46,8 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Montserrat", "Arial Narrow Bold", sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+@font-family-serif:       Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -66,9 +70,9 @@
 
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    @font-family-sans-serif;
-@headings-font-weight:    700;
+@headings-font-weight:    600;
 @headings-line-height:    1.1;
-@headings-color:          #000;
+@headings-color:          #252525;
 
 
 //== Iconography
@@ -342,7 +346,7 @@
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      (1140px + @grid-gutter-width);
+@container-large-desktop:      (1160px + @grid-gutter-width);
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
@@ -359,15 +363,17 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #000;
-@navbar-default-bg:                #fff;
+@navbar-default-color:             #252525;
+@navbar-default-bg:                transparent;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-white:             #fff;
+@navbar-default-border-white:      rgba(0, 0, 0, 0.1);
 
 // Navbar links
-@navbar-default-link-color:                #000;
-@navbar-default-link-hover-color:          #000;
+@navbar-default-link-color:                #555;
+@navbar-default-link-hover-color:          #252525;
 @navbar-default-link-hover-bg:             darken(@navbar-default-bg, 6.5%);
-@navbar-default-link-active-color:         #000;
+@navbar-default-link-active-color:         #252525;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
@@ -559,7 +565,7 @@
 //##
 
 //** Default label background color
-@label-default-bg:            @btn-default-bg;
+@label-default-bg:            @green;
 //** Primary label background color
 @label-primary-bg:            @brand-primary;
 //** Success label background color
@@ -707,7 +713,7 @@
 @panel-footer-bg:             #f5f5f5;
 
 @panel-default-text:          @text-color;
-@panel-default-border:        #ddd;
+@panel-default-border:        rgba(0, 0, 0, 0.1);
 @panel-default-heading-bg:    #f5f5f5;
 
 @panel-primary-text:          #fff;

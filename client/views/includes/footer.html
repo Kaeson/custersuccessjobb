@@ -1,29 +1,56 @@
 <template name="footer">
-	<footer class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<small>
-					Made By <a href="http://natestrauser.me" target="_blank">Nate Strauser</a>
-					&nbsp;-&nbsp;
-					<i class="fa fa-github fa-lg"></i>&nbsp;&nbsp;<a href="https://github.com/nate-strauser/wework" target="_blank">Fork me on GitHub</a>
-				</small>
+	<footer class="globalFooter withCards">
+		<!--<section class="globalFooterCards">
+		  <div class="container flex">
+			  <div class="common-link globalFooterCard card-employers"></div>
+			  <div class="common-link globalFooterCard card-csm"></div>
+		  </div>
+		</section>-->
+		<section class="globalFooterCTA">
+			<div class="container flex">
+				<div class="content">
+				<h1 class="title">
+					<span class="subtitle">Ready to get started?</span>
+					Get in touch, or create an account.
+				</h1>
+				</div>
+				<div class="common-ButtonGroup buttons">
+
+					<a class="common-Button common-Button--default" href="https://dashboard.stripe.com/register" data-analytics-action="sign_up" data-analytics-source="footer_cta">
+					Lägg in en annons gratis
+					</a>
+
+				<a href="https://www.linkedin.com/in/aekholm/" target="_blank" class="common-Button" data-analytics-action="contact_sales" data-analytics-source="footer_cta">
+					Kontakta mig
+				</a>
+
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<br>
-				<small>
-					<i class="fa fa-rss"></i> RSS <a href="/rss/jobs" target="_blank">Jobs</a> <a href="/rss/profiles" target="_blank">Developers</a>
-					&nbsp;-&nbsp;
-					<i class="fa fa-code"></i> JSON <a href="/api/jobs" target="_blank">Jobs</a> <a href="/api/profiles" target="_blank">Developers</a> 
-				</small>
-				<br>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 text-center" id="disclaimer">
-				We Work Meteor is an independent entity and has not been authorized, sponsored, or otherwise approved by <a href="http://www.meteor.com/">Meteor Development Group</a>.
-			</div>
-		</div>
+		</section>
+		<section class="globalFooterNav">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<small>
+							Skapad av <a href="https://www.linkedin.com/in/aekholm/" target="_blank">Anders Ekholm - Customer Success Manager</a>
+						</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<br>
+						<small>
+							<i class="fa fa-rss"></i> RSS <a href="/rss/jobs" target="_blank">Jobb -</a> <a href="/rss/profiles" target="_blank">Customer Success Profiler</a>
+			
+							<i class="fa fa-code"></i> JSON <a href="/api/jobs" target="_blank">Jobb -</a> <a href="/api/profiles" target="_blank">Customer Success Profiler</a> 
+						</small>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center" id="disclaimer">
+						CustomerSuccess.se samarbetar med <a href="http://www.planhat.com/">Planhat</a>.
+					</div>
+				</div>
+		</section>
 	</footer>
 </template>

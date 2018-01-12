@@ -1,25 +1,25 @@
 <template name="jobsRecent">
     <section id="jobsRecent">
-        <div class="row">
-            <div class="col-sm-4">
-                <h2>Recent Jobs</h2>
+        <div class="row recentJobs-header">
+            <div class="col-sm-9">
+                <h2>🔥 Senaste jobben inom Customer Success</h2>
             </div>
-            <div class="col-sm-4 text-center">
-                Last post about {{timeFromLastJob}}
-            </div>
-            <div class="col-sm-4 text-right">
-                <a href="/rss/jobs" target="_blank"><i class="fa fa-rss fa-2x"></i></a>
+            <div class="col-sm-3 text-right marginBottom10">
+                <a href="/rss/jobs" target="_blank"><i class="fa fa-rss"></i></a>
             </div>
         </div>
+
         {{#each featuredJobs}}
             {{>jobSmall}}
         {{/each}}
         {{#each jobs}}
             {{>jobSmall}}
         {{/each}}
-        <div class="panel panel-default">
+
+
+        <div class="panel panel-default top-border">
             <div class="panel-body text-center">
-                <h4><a href="{{pathFor 'jobs'}}">View All {{getCount 'jobCount'}} Jobs&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a></h4>
+                <a class="view-all" href="{{pathFor 'jobs'}}">Se alla {{getCount 'jobCount'}} Customer Success jobb&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
     </section>

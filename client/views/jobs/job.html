@@ -1,58 +1,60 @@
 <template name="job">
 	<div id="job" class="row">
-		<div class="col-sm-12">
-			<div class="panel panel-default">
+        <div class="col-sm-12">
+          <nav class="breadcrumbs-wrapper">
+            <div class="breadcrumbs">
+                <a href="/">Customer Success</a>
+                <a href="/jobs">Jobb</a>
+                <a href="{{pathFor 'job'}}">{{title}} på {{company}} i {{location}}</a>
+            </div>
+          </nav>
+        </div>
+		<div class="col-sm-9">
+            {{#if isInRole 'admin'}}
+			<div class="panel panel-default marginBottom">
 				<div class="panel-body">
-					{{>jobExpiredAlert}}
-					{{#if isInRole 'admin'}}
 					    {{>jobAdminEditLink}}
 					    {{>jobStatusToggle}}
 					    {{>jobSuggestedTweet}}
-					{{/if}}
-					{{>jobStatusAlert}}
-					{{>jobFeatured}}
+				</div>
+			</div>
+            {{/if}}
+            {{>jobExpiredAlert}}
+            <div class="row">
+               <div class="col-sm-12">
+                {{>jobStatusAlert}}
+                {{>jobFeatured}}
+                </div>
+            </div>
+            <div class="panel panel-default">
+				<div class="panel-body">
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-sm-10">
 							<h2>
 								{{title}}
 							</h2>
 						</div>
+                        <div class="col-sm-2 logo-url">
+							{{#if logoimage}}
+								<img src="{{logoimage}}" />
+							{{/if}}
+						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							{{#if company}}
 								<i class="fa fa-building fa-fw"></i> {{company}}
 							{{/if}}
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-8">
 							{{#if location}}
 								<i class="fa fa-map-marker"></i> {{location}}
-							{{/if}}
-						</div>
-						<div class="col-sm-6 job-url">
-							{{#if url}}
-								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank" rel="noopener">{{cutString url 50}}</a>
 							{{/if}}
 						</div>
 					</div>
 					<hr>
 					<div class="row">
-						<div class="col-sm-3">
-							{{>jobLabels}}
-							{{#if hasLabel}}
-								<hr>
-							{{/if}}
-							{{#if contact}}
-								<i class="fa fa-envelope fa-fw"></i> {{contact}}
-								<hr>
-							{{/if}}
-							<i class="fa fa-calendar fa-fw"></i> Posted on {{formatDate createdAt}}
-							{{#if featured}}
-							<hr>
-							<i class="fa fa-trophy fa-fw"></i> Featured Until {{formatDate featuredThrough}}
-							{{/if}}
-						</div>
-						<div class="col-sm-9">
+						<div class="col-sm-12">
 							{{#if htmlDescription}}
 								{{{htmlDescription}}}
 							{{/if}}
@@ -80,5 +82,32 @@
 				</div>
 			</div>
 		</div>
+        <div class="col-sm-3 sticky">
+            {{#if url}}
+            <div class="common-ButtonGroup buttons flex-center marginBottom">
+            <a class="common-Button common-Button--default flex-fullWidth" href="{{url}}" target="_blank">
+             Ansök
+            </a>
+            </div>
+            {{/if}}
+            <div class="facts-about-job">
+                <div class="facts-about-job__title">Snabbfakta</div>
+                <div class="facts-about-job__body">
+                {{>jobLabels}}
+                {{#if hasLabel}}
+                    <hr>
+                {{/if}}
+                {{#if contact}}
+                    <i class="fa fa-envelope fa-fw"></i> {{contact}}
+                    <hr>
+                {{/if}}
+                <i class="fa fa-calendar fa-fw"></i> Posted on {{formatDate createdAt}}
+                {{#if featured}}
+                <hr>
+                <i class="fa fa-trophy fa-fw"></i> Featured Until {{formatDate featuredThrough}}
+                {{/if}}
+                </div>
+            </div>
+        </div>
 	</div>
 </template>

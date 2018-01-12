@@ -1,31 +1,36 @@
 <template name="jobSmall">
-    <div class="jobSmall {{#if featured}}featured{{/if}} panel panel-default">
-        <div class="panel-body">
+    <a href="{{pathFor 'job'}}" class="jobSmall panel panel-default no-border">
+        <div class="panel-body panel-shadow {{#if featured}}featured{{/if}}">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-2 logos">
+                    {{#if logoimage}}
+				    <img src="{{logoimage}}" />
+				    {{/if}}
+                </div>
+                <div class="col-sm-7">
+                    <div class="company-text">
+                        {{#if company}}{{company}}{{/if}}
+                    </div>
                     <h4>
-				<a href="{{pathFor 'job'}}">{{title}}</a>
-			</h4>
-                </div>
-                <div class="col-sm-4 text-right">
-                    {{>jobLabels}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
+                        {{title}} <span class="title-location">i {{#if location}}{{location}}{{/if}}</span>
+			        </h4>
+                    <div class="date-text">
                      
-                    <i class="fa fa-calendar"></i> {{formatDate createdAt}}
+                    <i class="fa fa-calendar"></i> Skapad {{formatDate createdAt}}
                     {{!-- {{#if featured}} - Featured Until {{formatDate featuredThrough}}{{/if}}
                      --}}
                     
                 </div>
-                <div class="col-sm-9 text-right">
-                    {{#if company}}<i class="fa fa-building"></i> {{company}}{{/if}}
+                <div class="location-text">
                     {{#if location}}
-                        {{#if company}} - {{/if}}<i class="fa fa-map-marker"></i> {{location}}
+                        <i class="fa fa-map-marker"></i> {{location}}
                     {{/if}}
+                </div>
+                </div>
+                <div class="col-sm-3 text-right marginTop-negative20">
+                    {{>jobLabels}}
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 </template>

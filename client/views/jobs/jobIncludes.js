@@ -36,11 +36,11 @@ Template.jobFeatured.events({
     btn.button('loading');
     StripeCheckout.open({
       key: Meteor.settings.public.Stripe.pubKey,
-      name: 'We Work Meteor',
+      name: 'CustomerSuccess.se',
       billingAddress: false,
       allowRememberMe: true,
-      description: 'Featured Job Post - 30 Days',
-      currency: "usd",
+      description: 'Sponsrat innehåll - 30 Dagar',
+      currency: "SEK",
       amount: 10000,
       email: getUserEmail(Meteor.user()),
       closed: function() {

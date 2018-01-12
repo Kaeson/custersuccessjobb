@@ -4,19 +4,25 @@ Jobs.attachSchema(
   new SimpleSchema({
     title: {
       type: String,
-      label: "Job Title",
+      label: "Jobbtitel",
       max: 128
     },
     company: {
       type: String,
-      label: "Company",
+      label: "Företag",
       max: 128,
       optional: true
     },
     location: {
       type: String,
-      label: "Location",
+      label: "Plats",
       max: 128,
+      optional: true
+    },
+    logoimage: {
+      type: String,
+      label: "Logo",
+      max: 200,
       optional: true
     },
     url: {
@@ -28,21 +34,21 @@ Jobs.attachSchema(
     },
     contact: {
       type: String,
-      label: "Contact Info",
+      label: "Kontaktinformation",
       max: 128
     },
     jobtype: {
       type: String,
-      label: "Job Type",
+      label: "Typ av jobb",
       allowedValues: JOB_TYPES
     },
     remote: {
       type: Boolean,
-      label: "This is a remote position."
+      label: "Vi accepterar frilansare"
     },
     userId: {
       type: String,
-      label: "User Id",
+      label: "Användar Id",
       autoValue: function() {
         if (this.isInsert) {
           return Meteor.userId();
@@ -58,7 +64,7 @@ Jobs.attachSchema(
     },
     userName: {
       type: String,
-      label: "User Name",
+      label: "Användarnamn",
       autoValue: function() {
         if (this.isInsert) {
           return getUserName(Meteor.user());
@@ -73,8 +79,8 @@ Jobs.attachSchema(
     },
     description: {
       type: String,
-      label: "Job Description",
-      max: 20000,
+      label: "Jobbeskrivning",
+      max: 40000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
       }

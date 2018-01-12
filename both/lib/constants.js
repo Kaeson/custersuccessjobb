@@ -1,4 +1,4 @@
-JOB_TYPES = ["Full Time", "Part Time", "Hourly Contract", "Term Contract", "Mentoring", "Internship", "Bounty", "Open Source", "Volunteer", "Other"];
+JOB_TYPES = ["Heltidstjänst", "Deltidstjänst", "Timbaserad", "Konsult", "Coachning", "Praktik", "Trainee", "Annat"];
 
 SUMMERNOTE_OPTIONS = {
   type: 'summernote',

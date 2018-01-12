@@ -3,7 +3,7 @@ Users = Meteor.users;
 UserProfileSchema = new SimpleSchema({
   name: {
     type: String,
-    label: "Full Name",
+    label: "Fullständigt namn",
     max: 64,
     optional: true
   }
@@ -27,7 +27,7 @@ UserSchema = new SimpleSchema({
   "emails.$.address": {
     type: String,
     regEx: SimpleSchema.RegEx.Email,
-    label: "Email Address"
+    label: "Epostadress"
   },
   "emails.$.verified": {
     type: Boolean,
